@@ -9,12 +9,12 @@ let uncrypted = ''
 
 let word = ''
 
-for(let i =  -24; i < 1 ; ++i){
+for(let i =  0; i < 1 ; ++i){
   let nb=i
   for(let index = 0 ; index < splitCrypted.length ; ++index){
     uncrypted = ''
     for(let char = 0 ; char < splitCrypted[index].length ; ++char ){
-    uncrypted += String.fromCharCode(splitCrypted[index].charCodeAt(char)+nb)
+    uncrypted += String.fromCharCode(splitCrypted[index].charCodeAt(char)-nb)
   }
   word += uncrypted+' '
 }
