@@ -5,12 +5,11 @@ let uncryptedChar = ''
 let uncryptedMsg= ''
 
 //for(let i =  0; i < 26 ; ++i){                   // boucle initiale qui teste toutes les lettres
-  let nb=9                                        // la valeur est i , ja'mis 9 car c'est le bon decalage
+  let nb=9                                        // variable on necessaire , la valeur est i , j'ai mis 9 car c'est le bon decalage 
   for(let index = 0 ; index < splitCrypted.length ; ++index){
     uncryptedChar = ''
     for(let char = 0 ; char < splitCrypted[index].length ; ++char ){
-      let x = splitCrypted[index].charCodeAt(char)
-      x = ((x-65+nb)%26) // formule magique pour le decalage un modulo du nombre de lettres permet de revenir au debut de l'alphabet
+      let x = (((splitCrypted[index].charCodeAt(char))-65+nb)%26) // formule magique pour le decalage un modulo du nombre de lettres permet de revenir au debut de l'alphabet
       uncryptedChar += String.fromCharCode(x+65)
   }
   uncryptedMsg += uncryptedChar+' '
